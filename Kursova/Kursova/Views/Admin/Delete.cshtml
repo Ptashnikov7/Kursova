@@ -1,0 +1,31 @@
+@model Kursova.Models.Product
+@{
+    ViewData["Title"] = "Удалить товар";
+}
+
+<div class="admin-dashboard mt-5 row justify-content-center">
+    <div class="col-md-6">
+        <div class="card glass-effect border-0 shadow-sm p-4 text-center">
+            <h2 class="mb-4 text-danger">Удалить товар</h2>
+            <h4 class="mb-3">Вы уверены, что хотите удалить этот товар?</h4>
+            
+            <div class="product-preview mb-4">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="@Model.ImageUrl" alt="@Model.Name" class="mb-3 rounded" style="max-height: 150px;" />
+                }
+                <h5 class="fw-bold">@Model.Name</h5>
+                <p class="text-muted">@Model.Description</p>
+                <h4 class="text-primary">@Model.Price грн</h4>
+            </div>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <div class="d-flex justify-content-center gap-3">
+                    <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4">Отмена</a>
+                    <input type="submit" value="Удалить" class="btn btn-danger rounded-pill px-4 btn-glow-danger" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

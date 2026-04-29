@@ -1,0 +1,44 @@
+@model Kursova.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Вход";
+}
+
+<div class="auth-container d-flex align-items-center justify-content-center">
+    <div class="auth-card glass-effect p-5">
+        <h2 class="text-center mb-4 auth-title">Добро пожаловать</h2>
+        <form asp-controller="Account" asp-action="Login" asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            
+            <div class="form-floating mb-3 custom-input-group">
+                <input asp-for="Email" class="form-control" id="floatingEmail" placeholder="name@example.com" />
+                <label asp-for="Email" for="floatingEmail">Email</label>
+                <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+            
+            <div class="form-floating mb-4 custom-input-group">
+                <input asp-for="Password" class="form-control" id="floatingPassword" placeholder="Пароль" />
+                <label asp-for="Password" for="floatingPassword">Пароль</label>
+                <span asp-validation-for="Password" class="text-danger small"></span>
+            </div>
+            
+            <div class="form-check mb-4 d-flex justify-content-between align-items-center">
+                <div>
+                    <input asp-for="RememberMe" class="form-check-input custom-checkbox" id="rememberMe" />
+                    <label asp-for="RememberMe" class="form-check-label text-muted" for="rememberMe">
+                        Запомнить меня
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100 btn-glow py-2 fw-bold rounded-pill">Войти</button>
+            
+            <div class="text-center mt-4">
+                <p class="text-muted mb-0">Нет аккаунта? <a asp-action="Register" class="text-decoration-none fw-bold auth-link">Создать сейчас</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
