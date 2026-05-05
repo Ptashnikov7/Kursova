@@ -4,11 +4,11 @@
 - Цей проєкт є курсовою роботою, що представляє собою сучасний веб-додаток для електронної комерції, побудований на стеку ASP.NET Core MVC.
 
 ## Технологічний стек
-- **Framework**: ASP.NET Core 9.0 (MVC)
-- **Database**: SQLite + Entity Framework Core (для забезпечення портативності та легкого запуску без налаштування серверів БД).
-- **Authentication**: ASP.NET Core Identity (RBAC — Role-Based Access Control).
-- **Payments**: Stripe API + Webhooks.
-- **Frontend**: Bootstrap 5, Razor Pages.
+- **Framework:** ASP.NET Core 10.0 (MVC)
+- **Database:** SQLite + Entity Framework Core (для забезпечення портативності та легкого запуску без налаштування серверів БД).
+- **Authentication:** ASP.NET Core Identity (RBAC — Role-Based Access Control).
+- **Payments:** Stripe API + Webhooks.
+- **Frontend:** Bootstrap 5, Razor Pages.
 
 ## Додаток А: Структура проєкту
 Нижче наведено опис ключових директорій та файлів проєкту:
